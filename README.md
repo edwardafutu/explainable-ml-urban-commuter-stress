@@ -2,9 +2,9 @@
 
 ## Project Overview
 
-This group project used machine learning to predict whether commuters experience high commuting stress. Using a simulated dataset of 500,000 respondents, we explored the factors associated with high commuter stress and compared different classification models.
+This group project used machine learning to predict whether commuters experience high commuting stress. Using a simulated dataset of 500,000 respondents, we explored factors associated with high commuter stress and compared different classification models.
 
-The analysis used a stratified sample of 9,925 respondents for exploratory analysis and model development.
+A stratified sample of 9,925 respondents was used for exploratory analysis and model development.
 
 ## Methods and Tools
 
@@ -16,14 +16,31 @@ The analysis used a stratified sample of 9,925 respondents for exploratory analy
 
 ## Key Findings
 
-- XGBoost achieved the highest test ROC AUC of **0.908**.
-- Commute time, monthly income and number of transfers were among the most influential predictors.
-- SHAP values and Partial Dependence Plots helped explain how individual predictors influenced model predictions.
-- Spark logistic regression achieved an ROC AUC of **0.905** on the full simulated population of 500,000 respondents.
+- XGBoost achieved a test ROC AUC of **0.908**.
+- Commute time, monthly income and number of transfers were among the influential predictors.
+- SHAP values and Partial Dependence Plots helped explain how predictors influenced model predictions.
+- Spark logistic regression achieved an ROC AUC of **0.905** using the full simulated population of 500,000 respondents.
 
 ## My Contribution
 
 I contributed to data exploration and led the XGBoost modelling and explainability component of the group project, including hyperparameter tuning, SHAP analysis and Partial Dependence Plots.
+
+## Repository Contents
+
+| File | Description |
+|---|---|
+| `BDAT604_All_Tasks_1-6.R` | R script containing the data simulation, exploratory analysis, model development, explainability and model comparison tasks. |
+| `BDAT604_Report_Tasks1-6_FFFs.pdf` | Project report documenting the methodology, analysis and findings. |
+
+## Running the Analysis
+
+The analysis script is designed to be run from top to bottom in a single R session because later tasks reuse objects created in earlier sections.
+
+The script uses R packages including `tidyverse`, `tidymodels`, `glmnet`, `kernlab`, `xgboost`, `vip`, `DALEXtra`, `shapviz`, `sparklyr`, `lubridate` and `knitr`.
+
+Apache Spark and a compatible Java environment are also required for the distributed modelling section.
+
+**Note:** The script generates its simulated dataset internally. The project does not use an external commuter survey dataset.
 
 ## Academic Context
 
@@ -33,4 +50,4 @@ I contributed to data exploration and led the XGBoost modelling and explainabili
 - **Project Type:** Group project
 - **Group Members:** De-Graft Kofi Obeng, Edward Afutu Amoni and Samuel Opoku
 
-*Note: The analysis used simulated data. The findings demonstrate machine learning methods and should not be interpreted as empirical evidence about actual commuter populations.*
+*The analysis uses simulated data. Its findings demonstrate machine learning methods and should not be interpreted as empirical evidence about actual commuter populations.*
